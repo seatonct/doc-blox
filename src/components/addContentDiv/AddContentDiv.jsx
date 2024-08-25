@@ -12,7 +12,7 @@ export const AddContentDiv = () => {
       id: divs.length,
       content: (
         <div className="bg-gray-300 p-4 m-2 rounded">
-          <textarea></textarea>
+          <textarea className="w-full"></textarea>
         </div>
       ),
     };
@@ -29,7 +29,7 @@ export const AddContentDiv = () => {
       </button>
       <div className="w-full flex flex-col items-center">
         {divs.map((div) => (
-          <div key={div.id}>
+          <div className="w-full" key={div.id}>
             {div.content}
             <button
               className="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"

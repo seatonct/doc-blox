@@ -23,9 +23,9 @@ export const AddDiv = () => {
       >
         Add Block
       </button>
-      <div className="w-full flex flex-col items-center">
+      <ol type="I" className="w-full flex flex-col items-center">
         {divs.map((div) => (
-          <div key={div.id} className="bg-gray-300 p-4 m-2 rounded">
+          <li key={div.id} className="bg-gray-300 p-4 m-2 rounded w-full">
             <AddContentDiv />
             <button
               className="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
@@ -33,9 +33,9 @@ export const AddDiv = () => {
             >
               Delete Block
             </button>
-          </div>
+          </li>
         ))}
-      </div>
+      </ol>
     </>
   );
 };
