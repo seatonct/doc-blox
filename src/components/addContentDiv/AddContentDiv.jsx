@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { AddContentDiv } from "../addContentDiv/AddContentDiv";
 
-export const AddDiv = () => {
+export const AddContentDiv = () => {
   const [divs, setDivs] = useState([]);
 
   const deleteDiv = (index) => {
@@ -11,6 +10,11 @@ export const AddDiv = () => {
   const addDiv = () => {
     const newDiv = {
       id: divs.length,
+      content: (
+        <div className="bg-gray-300 p-4 m-2 rounded">
+          <textarea className="w-full"></textarea>
+        </div>
+      ),
     };
     setDivs([...divs, newDiv]);
   };
@@ -21,21 +25,21 @@ export const AddDiv = () => {
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={addDiv}
       >
-        Add Block
+        Add Content Block
       </button>
-      <ol type="I" className="w-full flex flex-col items-center">
+      <div className="w-full flex flex-col items-center">
         {divs.map((div) => (
-          <li key={div.id} className="bg-gray-100 p-4 m-2 rounded w-full">
-            <AddContentDiv />
+          <div className="w-full" key={div.id}>
+            {div.content}
             <button
               className="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
               onClick={() => deleteDiv(div.id)}
             >
-              Delete Block
+              Delete Content Block
             </button>
-          </li>
+          </div>
         ))}
-      </ol>
+      </div>
     </>
   );
 };
