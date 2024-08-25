@@ -25,7 +25,7 @@ export const AddDiv = () => {
       </button>
       <ol type="I" className="w-full flex flex-col items-center">
         {divs.map((div) => (
-          <li key={div.id} className="bg-gray-300 p-4 m-2 rounded w-full">
+          <li key={div.id} className="bg-gray-100 p-4 m-2 rounded w-full">
             <AddContentDiv />
             <button
               className="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
